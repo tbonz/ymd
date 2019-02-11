@@ -5,7 +5,11 @@ class YMDTest < Minitest::Test
     refute_nil ::YMD::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_it_outputs_year_month_day
+    assert_equal("20190714", YMD.ymd)
+  end
+
+  def test_it_outputs_year_month_day_with_separator
+    assert_equal("2019_07_14", YMD.ymd('_'))
   end
 end
