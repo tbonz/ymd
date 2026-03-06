@@ -23,7 +23,7 @@ Or install it yourself as:
 Usage examples:
 
 ```ruby
-# default usage
+# default usage (current date)
 YMD.ymd
 # => "20191231"
 
@@ -34,6 +34,18 @@ YMD.ymd('_')
 # output date with '-' separator
 YMD.ymd('-')
 # => "2019-12-31"
+
+# with a specific Date object
+YMD.ymd(date: Date.new(2023, 12, 25))
+# => "20231225"
+
+# with a Date object and separator
+YMD.ymd('-', date: Date.new(2023, 12, 25))
+# => "2023-12-25"
+
+# works with DateTime and Time objects too
+YMD.ymd(date: DateTime.now)
+YMD.ymd('/', date: Time.now)
 ```
 
 ## Development
